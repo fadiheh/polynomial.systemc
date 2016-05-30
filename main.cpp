@@ -21,10 +21,23 @@ int sc_main(int argc, char* argv[])
 
 // a clock that has a positive edge only at 10 ns 
   sc_clock TestClk("TestClock", 10, SC_NS,0.5, 10, SC_NS);
-
+  cout<<"salam"<<endl;
   // TODO insert your module here
-
+  polyInt p("polyInt");
+  p.A(ASig);
+  p.B(BSig);
+  p.Res(ResSig);
+  p.Start(StartSig);
+  p.Finish(FinishSig);
+  p.Clk(TestClk);
   // TODO insert your testbench here
+  polyInt_tb tb("polyInt_tb");
+  tb.A(ASig);
+  tb.B(BSig);
+  tb.Res(ResSig);
+  tb.Start(StartSig);
+  tb.Finish(FinishSig);
+  tb.Clk(TestClk);
 
   sc_start();  // run forever
 

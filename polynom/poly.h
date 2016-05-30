@@ -43,7 +43,7 @@ const double poly_coeff[poly_degree + 1] = {
 
 
 // TODO: define the functions you need for the module here
-
+double polynomValue( const double coeff[], double x, int deg);
 /* TODO: define your Module here
 * The modules task is to calculate the function value of a fixed polynom (defined above) at a variable argument.
 * The argument is the input to the module and the function value is the ouput.
@@ -51,5 +51,18 @@ const double poly_coeff[poly_degree + 1] = {
 * 
 * Please use functions to keep this module definition as simple and small as possible.
 */
+SC_MODULE(poly){
+
+	sc_in<double> x;
+	sc_out<double> y;
+
+	void cal_poly();
+
+	SC_CTOR(poly){
+		SC_METHOD(cal_poly);
+		sensitive<<x;
+	}
+
+};
 
 #endif // POLY_H

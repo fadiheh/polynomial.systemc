@@ -11,3 +11,17 @@
 #include "poly.h"
 
 // TODO: implement your function(s) for your Module here
+
+double polynomValue( const double coeff[], double x, int deg){
+	double y = coeff[deg];
+	for(int i = deg - 1; i >= 0; i--){
+		y *= x;
+		y += coeff[i];
+	}
+
+	return y;
+}
+
+void poly::cal_poly(){
+	y.write( polynomValue(poly_coeff, x.read(), poly_degree) );
+}

@@ -26,6 +26,9 @@ int sc_main(int argc, char* argv[])
   Stim1.Clk(TestClk);		// Module Input Clock
 
 // TODO: use your module here
+  poly p("poly");
+  p.x(XSig);
+  p.y(YSig);
 // Input  Signal: XSig
 // Output Signal: YSig
 
